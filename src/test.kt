@@ -22,21 +22,34 @@ fun main(args: Array<String>) {
         }
     }
 
-    val arg = intArrayOf(1, 2, 3, 4, 5, 6, 7, 8,9)
+    val arg = intArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     convert(arg)
     arg.forEach(::println)
 
-    fun isPrime(N:Int): Boolean {
-        if (N<2){
+    fun isPrime(N: Int): Boolean {
+        if (N < 2) {
             return false
         }
-        for (i in 2 until N){
-            if (N%i==0) {
+        for (i in 2 until N) {
+            if (N % i == 0) {
                 println("N%i $N  $i")
                 return false
             }
         }
         return true
     }
-    println("isPrime() ${isPrime(7)}")
+
+    println("isPrime() ${isPrime(7)}  ${Double.NaN} ${1e-15} ${Double.MAX_VALUE}")
+
+    fun sqrt(c: Double): Double {
+        if (c < 0) return Double.NaN
+        val err = 1e-15
+        var t = c
+        while (Math.abs(t - c / t) > err * t) {
+            println("(c/t+t) c $c t $t c/t ${c / t}")
+            t = (c / t + t) / 2.0
+        }
+        return t
+    }
+    println("sqrt(100.0) ${sqrt(100.0)}")
 }
