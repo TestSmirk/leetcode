@@ -52,4 +52,11 @@ fun main(args: Array<String>) {
         return t
     }
     println("sqrt(100.0) ${sqrt(100.0)}")
+
+    val i = -2147483648
+    println("boolean ${i < 0}  ${-(-2147483648)} ${Int.MAX_VALUE}")
+    println(" ${1.0/0.0}")
+    println("Math ${Math.abs(i)}")
+
+
 }
