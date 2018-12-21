@@ -55,8 +55,14 @@ fun main(args: Array<String>) {
 
     val i = -2147483648
     println("boolean ${i < 0}  ${-(-2147483648)} ${Int.MAX_VALUE}")
-    println(" ${1.0/0.0}")
+    println(" ${1.0 / 0.0}")
     println("Math ${Math.abs(i)}")
 
+    println((0 + 15) / 2)
+    println(2.0e-6 * 100000000.1)
+    println((true || false ))
 
+
+
+//    println((1+2+"3"))
 }
